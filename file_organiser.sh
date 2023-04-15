@@ -11,8 +11,8 @@ sudo mkdir -p "$directory_to_organize/images"
 for file in "$directory_to_organize"/*;do 
    extension="${file##*.}"
 
-  case "$extension" in 
-        txt|doc|docx|pdf)
+    case "$extension" in
+        txt|doc|pdf|docx)
           mv "$file" "$directory_to_organize/files/"
           ;;
 
@@ -24,12 +24,13 @@ for file in "$directory_to_organize"/*;do
           ;;
         *)
         ;;
-  esac
+    esac
 done
+owner=$(whoami)
 
-sudo chown -R ghost $directory_to_organize/files
-sudo chown -R ghost $directory_to_organize/images
-sudo chown -R ghost $directory_to_organize/Videos 
+sudo chown -R $owner $directory_to_organize/files
+sudo chown -R $owner $directory_to_organize/images
+sudo chown -R $owner $directory_to_organize/Videos 
 
 
 echo "organizing completed!"
