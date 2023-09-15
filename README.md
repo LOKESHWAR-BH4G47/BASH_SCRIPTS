@@ -1,4 +1,4 @@
-# PROJECTS
+# SHELL BASIC SCRIPTS
 # Script README
 
 ## Website Update Script (websiteupdate.sh)
